@@ -38,7 +38,15 @@ document.getElementById('calcBtn').addEventListener('click', () => {
     let rate = document.getElementById("rate").value;
 
     let mortgage = new Mortgage(principal, years, rate);
-    let html = "";
+    let html = `
+        <tr>
+            <td>Day</td>
+            <td>Principal</td>
+            <td></td>
+            <td>Interest</td>
+            <td>Balance</td>
+        </tr>
+    `;
 
     document.getElementById("monthlyPayment").innerHTML = mortgage.monthlyPayment.toFixed(2);
     document.getElementById("monthlyRate").innerHTML = (rate / 12).toFixed(2);
