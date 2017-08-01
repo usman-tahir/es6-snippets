@@ -1,0 +1,6 @@
+# Project specific
+node_modules/
+build/
+
+# Editor specific
+/.vscode/
