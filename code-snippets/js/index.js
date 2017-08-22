@@ -15,4 +15,18 @@
   console.log(callbacks[0]() === 0)
   console.log(callbacks[1]() === 2)
   console.log(callbacks[2] === 4)
+
+  // Scope (block-scoped function definitions)
+  {
+    function foo() { return 1 }
+    console.log(foo() === 1) // true
+
+    {
+      function foo() { return 2 }
+      console.log(foo() === 2) // true
+    }
+
+    console.log(foo() === 1) // true
+    console.log(foo() === 2) // false
+  }
 }())
