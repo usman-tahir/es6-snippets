@@ -29,4 +29,43 @@
     console.log(foo() === 1) // true
     console.log(foo() === 2) // false
   }
+
+  // Arrow functions/Expression bodies
+  let evens = [2, 4, 6, 8, 10]
+
+  let odds = evens.map(v => v + 1)
+  console.log(odds) // [3, 5, 7, 9, 11]
+
+  let pairs = evens.map(v => ({ even: v, odd: v + 1 }))
+  console.log(pairs)
+  /*
+    [
+      { even: 2, odd: 3 },
+      { even: 4, odd: 5 },
+      { even: 6, odd: 7 },
+      { even: 8, odd: 9 },
+      { even: 10, odd: 11}
+    ]
+  */
+
+  let nums = evens.map((v, i) => v + 1)
+  console.log(nums) // [3, 5, 7, 9, 11]
+
+  // Statement bodies
+  let fives = []
+  nums.forEach(v => {
+    if (v % 5 === 0) {
+      fives.push(v)
+    }
+  })
+  console.log(fives) // [5]
+
+  // lexical 'this'
+  // let threes = []
+  // this.nums.forEach((v) => {
+  //   if (v % 3 === 0) {
+  //     threes.push(v)
+  //   }
+  // })
+  // console.log(threes) // [3, 9]
 }())
