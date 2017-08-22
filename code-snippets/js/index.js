@@ -68,4 +68,25 @@
   //   }
   // })
   // console.log(threes) // [3, 9]
+
+  // Default parameter values
+  function f(x, y = 7, z = 42) {
+    return x + y + z;
+  }
+  console.log(f(1) === 50) // true
+
+  // 'Rest' parameter
+  function f(x, y, ...a) {
+    return (x + y) * a.length
+  }
+  console.log(f(1, 2, 'hello', true, 7) === 9) // true
+
+  // Spread operator (spreading of elements of a iterable collection) into both
+  // literal elements and individual function elements
+  let params = ['hello', true, 7]
+  let other = [1, 2, ...params] // [1, 2, 'hello', true, 7]
+
+  function f(x, y, ...a) {
+    return (x + y) * a.length
+  }
 }())
