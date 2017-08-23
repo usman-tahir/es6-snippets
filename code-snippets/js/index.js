@@ -89,4 +89,13 @@
   function f(x, y, ...a) {
     return (x + y) * a.length
   }
+
+  // String interpolation
+  let customer = { name: 'Foo' }
+  let card = { amount: 7, product: 'Bar', unitPrice: 42 }
+  let message = `
+    Hello, ${customer.name}, do you want to buy ${card.amount} ${card.product}
+    for a total of $${card.amount * card.unitPrice}?
+  `
+  console.log(message)
 }())
