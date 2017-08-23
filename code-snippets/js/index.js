@@ -98,4 +98,8 @@
     for a total of $${card.amount * card.unitPrice}?
   `
   console.log(message)
+
+  // Extended literals
+  console.log(0b111110111 === 503)
+  console.log(0o767 === 503)
 }())
