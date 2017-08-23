@@ -118,14 +118,32 @@
     }
   }
 
-  let report = (match) => {
-    console.log(JSON.stringify(match))
+  // let report = (match) => {
+  //   console.log(JSON.stringify(match))
+  // }
+  //
+  // parser("Foo 1 Bar 7 Baz 42", [
+  //   { pattern: /^Foo\s+(\d+)/y, action: (match) => report(match) },
+  //   { pattern: /^Bar\s+(\d+)/y, action: (match) => report(match) },
+  //   { pattern: /^Baz\s+(\d+)/y, action: (match) => report(match) },
+  //   { pattern: /^\s*/y, action: (match) => {} }
+  // ])
+
+  // Property shorthand
+  let x = 7
+  let y = 42
+  let obj = { x, y }
+
+  console.log(obj)
+
+  function quux() {
+    return "quux"
   }
 
-  parser("Foo 1 Bar 7 Baz 42", [
-    { pattern: /^Foo\s+(\d+)/y, action: (match) => report(match) },
-    { pattern: /^Bar\s+(\d+)/y, action: (match) => report(match) },
-    { pattern: /^Baz\s+(\d+)/y, action: (match) => report(match) },
-    { pattern: /^\s*/y, action: (match) => {} }
-  ])
+  obj = {
+    foo: "bar",
+    ["baz" + quux()]: 42
+  }
+
+  console.log(obj)
 }())
