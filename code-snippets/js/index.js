@@ -146,4 +146,33 @@
   }
 
   console.log(obj)
+
+  // Object matching shorthand notation
+  function f() {
+    let a = 1;
+    let b = 2;
+    let c = a + b;
+
+    return { a, b, c }
+  }
+
+  let {a, b, c } = f();
+  console.log(a, b, c)
+
+  // Parameter context matching
+  function f2([name, val]) {
+    console.log(name, val)
+  }
+
+  function g({ name: n, val: v }) {
+    console.log(n, v)
+  }
+
+  function h({ name, val }) {
+    console.log(name, val)
+  }
+
+  f2(["bar", 42])
+  g({ name: "foo", val: 7 })
+  h({ name: "bar", val: 42 })
 }())
